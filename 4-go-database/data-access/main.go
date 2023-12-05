@@ -1,7 +1,6 @@
 package main
 
 import (
-	"database/sql"
 	"fmt"
 	"log"
 
@@ -22,11 +21,6 @@ type Album struct {
 	Artist string
 	Price  float32
 }
-
-var psqlInfo = fmt.Sprintf("host=%s port=%d user=%s "+
-	"password=%s dbname=%s sslmode=disable",
-	host, port, user, password, dbname)
-var db, err = sql.Open("postgres", psqlInfo)
 
 func main() {
 	if err != nil {
